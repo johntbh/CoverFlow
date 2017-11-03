@@ -1,0 +1,106 @@
+/* Image et info du film */
+.movie{
+    position: relative;
+    display: inline-block;
+}
+
+.poster{
+    height: 278px;
+    width: 185px;
+    display: block;
+    opacity: 0.5;
+}
+
+.title,.summary,.stars{
+    position: absolute;
+    text-align: center;
+}
+
+.title{
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.summary{
+    top: 65%;
+    height: 33%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.stars{
+    top: 55%;
+    left: 7.5%;
+}
+
+/* Slide */
+#root{
+    
+    display: flex;
+    position: relative;
+    perspective: 600px;
+    overflow: hidden;
+}
+
+#root>div{
+    text-align: center;
+    position: relative;
+    transition: transform 1s;
+}
+
+.next{
+    transform: rotateY(-60deg);
+}
+
+.prev{
+    transform: rotateY(60deg);
+}
+
+.fake{
+    width: 185px;
+    height: 282px;
+}
+
+/* Flèche de sélection */
+.arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.arrow.right{
+    right: 0;
+}
+
+/* Bullet Point */
+#bullet{
+    position: absolute;
+    height: 10%;
+    width: 40%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+    border: solid 1px white;
+    z-index: 600;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.circle.current{
+    background-color: gray;
+}
